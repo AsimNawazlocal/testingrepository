@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://grapevineexpertplumbers.com/sitemap.xml
+Disallow: /404/
+Sitemap: https://sandyutplumbingexperts.com/sitemap.xml

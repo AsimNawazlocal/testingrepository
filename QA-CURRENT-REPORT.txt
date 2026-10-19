@@ -1,0 +1,8 @@
+SANDY UT PLUMBING — QA REPORT (2026-10-13)
+Baseline: user-uploaded sandy-ut-plumbing-flowright-redesign(1).zip
+Scope: 35 HTML files inventoried.
+STATIC CHECK: Local img/script/link asset references checked; missing references: 0 (see QA-STATIC-ISSUES.csv).
+BROWSER QA: NOT TESTED. Chromium was installed, but navigation to local file:// and local HTTP server was blocked by administrator policy (net::ERR_BLOCKED_BY_ADMINISTRATOR). No screenshot, responsive viewport, click/menu or rendered image assertions are made.
+REPAIRS: None made. Source archive preserved unchanged; no verified defects suitable for safe repair.
+NEXT: Render in an unrestricted browser environment and test 320,375,390,414,768,1024,1280,1366,1440,1920 px, mobile menu, links, images, console, forms and keyboard interactions before deployment.
+The earlier QA report included in the source ZIP is historical and does not establish successful testing in this run.

@@ -1,0 +1,20 @@
+SANDY UT PLUMBING — FOLLOW-UP INTERACTION QA
+Date: 2026-10-13
+Baseline: sandy-ut-plumbing-navigation-repaired.zip
+
+VERIFIED THIS PASS
+- ZIP integrity: PASS (archive CRC check).
+- HTML inventory: 35 pages.
+- Shared mobile navigation closeMobileMenu handler present: 35/35 HTML pages.
+
+BROWSER VERIFICATION BLOCKED
+- Chromium file navigation returned ERR_BLOCKED_BY_ADMINISTRATOR at 390, 768, and 1366px.
+- An alternative HTML injection attempt timed out.
+- Accordingly, live menu clicks, outside-click dismissal, link selection, viewport reset, CSS appearance, images, and responsive regression: NOT TESTED this pass.
+- Do not interpret code presence as proof of successful interaction.
+
+REPAIRS
+- No source changes were made: no additional defect could be verified.
+
+NEXT ACTION
+- Run the ZIP on a permitted local/static web host and execute Chromium interaction and responsive QA; confirm all mobile-menu dismissal modes and sitewide links before deployment.

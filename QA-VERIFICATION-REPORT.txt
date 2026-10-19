@@ -1,0 +1,16 @@
+SANDY UT PLUMBING — FINAL AVAILABLE QA
+Source: latest mobile-navigation-fixed ZIP; live homepage inspected through web text retrieval.
+HTML pages: 35
+Pages with hamburger markup: 35
+Missing root-relative assets: 0
+Mobile menu CSS: hidden default and visible .open rules present at <=1023px.
+Dark #local section: light paragraph text and bright labels present.
+Footer: dark text on light background overrides present.
+
+BROWSER LIMITATION: Direct Cloudflare/localhost/file browser navigation blocked in this environment. A 35-page inline browser-render batch timed out. Consequently no full-page live rendering, contrast computed-style audit, or complete mobile interaction suite is claimed as passed.
+
+LIVE DEPLOYMENT: Updating this local ZIP does not update Cloudflare. The live deployed build may differ.
+
+TELEPHONE: Excluded at user direction.
+
+Missing paths: []

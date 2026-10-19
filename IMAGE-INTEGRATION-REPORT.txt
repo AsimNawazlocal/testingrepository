@@ -1,0 +1,275 @@
+SANDY UT PLUMBING EXPERTS — IMAGE INTEGRATION REPORT
+Phase: Website Image Optimization & Contextual Integration
+Scope: index.html + 31 interior pages (404.html and privacy.html excluded, as they carry no
+editorial content and were out of scope for image placement)
+Date basis: single build pass, this session
+
+================================================================================
+1. SOURCE LIBRARY AND TOTALS
+================================================================================
+Total source images supplied:              556
+Excluded — standing service-exclusion topic
+  (sump pump / septic / backflow / cesspool,
+  not part of Sandy's approved 19-service scope):   34
+Excluded — watermark / overlay / baked-in text
+  defect (confirmed by manual visual zoom review,
+  all 24 contact sheets covering all 556 photos):    7
+Filename/content mismatch corrected
+  (recategorized, remained usable):                  1
+Usable pool after exclusions:                      517
+Images actually selected and placed on the site:   165
+Usable images NOT used (kept in reserve, no
+  genuinely relevant placement found or page
+  did not need them):                               352
+
+Total unique images used: 165. Every used filename appears exactly once across the entire
+site (verified programmatically — 0 duplicate content-image references). Branding assets
+(logo, favicon) are separate from this count and were completed in an earlier build phase.
+
+================================================================================
+2. EXCLUDED IMAGES — DETAIL
+================================================================================
+Topic-excluded (34 files): filenames matching sump/septic/backflow/cesspool keywords,
+excluded because these services are outside Sandy's approved 19-service scope established
+in the original site build.
+
+Watermark / overlay / defect-excluded (7 files), each manually confirmed via zoomed visual
+inspection, not filename guesswork:
+  - aquarium-sump-pvc-drain-connections.jpg — video-editor watermark ("Created with
+    FilmForth") bottom-left (also a topic exclusion)
+  - cast-iron-pipe-interior-with-blue-sample.jpg — stock-photo catalog number overlay
+    top-right
+  - restaurant-sewer-hydro-jetting-work-area.jpg — third-party company logo watermark
+    bottom-right
+  - sewer-cleanout-water-flow-after-hydro-jetting.jpg — same third-party logo watermark
+  - shutting-off-main-water-supply-before-filter-install.jpg — instructional text baked
+    into the image
+  - emergency-drain-cleaning-tools-display.jpg — promotional text baked into the image
+  - modern-type-two-backflow-bypass-assembly.jpg — instructional text overlay (also a
+    topic exclusion)
+
+Filename/content mismatch (1 file): checking-clearance-around-replacement-sewer-line.jpg
+is actually a pool skimmer net in a swimming pool, not a sewer line. Recategorized under
+leak_detection (pool/spa leak context) rather than excluded, since the real content is
+still usable — just not for a sewer-line slot.
+
+================================================================================
+3. SELECTION METHOD AND RELEVANCE ENFORCEMENT
+================================================================================
+Images were tagged into ~25 topic categories from filename content (manually spot-checked
+against the actual photos via contact sheets), then matched to each page's existing
+IMAGE_SLOT_META placeholders and to newly found H2+paragraph insertion points using a
+two-part acceptance gate:
+  (a) the image must match the page's PRIMARY (most specific) topical category, OR
+  (b) at least 2 distinct keywords must overlap between the image's filename and the
+      surrounding section's actual text.
+A match on only a broad fallback category (e.g. "general_pipe_repair") plus one generic
+shared word was explicitly NOT accepted — this rule was added after an initial draft
+allocation produced a real violation (see Section 11) and was tightened mid-build.
+Three further allocations were corrected by hand after spot-checking the full 165-row
+allocation (see Section 11). Pages where no acceptable image existed for a slot were left
+with fewer images rather than forced into a bad match, per the governing instructions'
+explicit permission to use fewer images when relevant ones are unavailable.
+
+================================================================================
+4. PER-PAGE IMAGE COUNTS
+================================================================================
+32 pages received images (165 total). Target counts were ~5–10 for service/area pages and
+~3–5 for special pages (Contact/FAQ/Cost/About/Services/Service-Areas), adjusted down in a
+few cases to the page's real available-image depth. See image-page-summary.csv for the
+full per-page table. Three pages ended up below their initial flexible target, each for a
+disclosed, deliberate reason rather than an oversight:
+  - cost.html: 2 images (target 3). The page's second existing placeholder slot described
+    "Plumber reviewing a repair estimate with a homeowner on a tablet" — no photo in the
+    556-image library matches that specific scene well enough to pass the relevance gate,
+    so the slot was left unfilled and its placeholder markup removed rather than shipped
+    as a visible gray box.
+  - service-areas.html: 2 images (target 3). One existing slot explicitly called for a
+    "map-style graphic showing Sandy, Utah and its surrounding service area." No real
+    photograph can honestly substitute for a map graphic, so this slot was deliberately
+    left empty rather than filled with an unrelated photo. A real map/service-area graphic
+    is a design-asset need, not a photo-selection problem, and is flagged as follow-up
+    work in Section 17.
+  - index.html (homepage): 3 images (target 5). The homepage's <main> content is almost
+    entirely built from custom componentized sections (service-row list, FAQ accordion,
+    elevation-pressure interactive widget, note cards, ZIP-code chips, brand strip) with
+    essentially no generic paragraph flow to insert into safely. The automated insertion-
+    point finder correctly returned 0 safe candidates here. Three images were hand-placed
+    at the only genuinely safe section boundaries (between the services list and the
+    pressure section; between the pressure section and the ground/soil section; between
+    the coverage-area section and the FAQ section), respecting the hero rule (nothing
+    before the H1/lede/first CTA) and never interrupting a componentized block.
+
+================================================================================
+5. DUPLICATE / UNIQUENESS CHECK
+================================================================================
+Duplicate content-image references across the site: 0 (programmatically verified against
+all 165 placed <img> tags).
+Duplicate alt text strings: 0.
+Duplicate full captions: 0.
+
+================================================================================
+6. BROKEN REFERENCE CHECK
+================================================================================
+Broken local image references: 0. Every one of the 165 <img src="/assets/images/content/
+*.webp"> paths was verified to resolve to an actual file on disk after the build.
+
+================================================================================
+7. PROHIBITED / WATERMARKED IMAGE CHECK
+================================================================================
+0 excluded images (topic, watermark/defect, or the filename-mismatch photo in its original
+miscategorized role) appear anywhere in the final 165 placed images — verified
+programmatically against the exclusion list built in Section 2.
+
+================================================================================
+8. ALT TEXT VALIDATION
+================================================================================
+Missing or empty alt attributes: 0 (all 165 <img> tags carry non-empty, descriptive alt
+text). All 165 alt strings are unique site-wide. Alt text was written to describe the
+image's actual photographed content, not the original placeholder's imagined scene — see
+Section 11 for why this distinction mattered.
+
+================================================================================
+9. CAPTION VALIDATION
+================================================================================
+All 165 captions were individually written (not templated) and checked against the
+prohibited-opening-phrase list ("A practical view of...", "This image shows...",
+"Relevant to this page...", "Used here because...", "A visual representation of...", and
+equivalents) — 0 matches found. Caption sentence-structure was varied deliberately; an
+initial pass over-used a single "A [noun]..." opening pattern on several pages (burst-
+pipe-repair, faucet-sink-repair, tankless-water-heaters, water-heater-installation,
+water-heater-repair, plumber-hidden-valley-sandy-ut), and a subset of those captions was
+rewritten to vary the opening structure before final build.
+
+================================================================================
+10. HERO-RULE / MEDIA-BEFORE-HEADER CHECK
+================================================================================
+Media-before-H1 violations: 0. No content image was inserted before any page's H1,
+intro/lede paragraph, or primary CTA (verified programmatically by comparing each page's
+first <figure class="content-figure"> position against its first <h1> position).
+
+================================================================================
+11. RELEVANCE FINDINGS AND CORRECTIONS MADE DURING BUILD
+================================================================================
+Three real relevance problems were found during manual spot-checking of the full
+allocation (before HTML was written) and corrected by hand:
+  a) gas-line-repair.html's third slot had been matched to an unrelated sewer-wye fitting
+     photo purely on a weak generic-keyword overlap, because the gas-specific photo pool
+     (only 2 true gas-line images exist in the whole 556-image library) was exhausted.
+     This triggered the acceptance-gate tightening described in Section 3.
+  b) After tightening, a second-pass run still matched gas-line-repair.html's "pressure
+     testing a residential gas line" slot to an unrelated pool-plumbing pressure-test
+     photo (that file carries no topic tag at all and only coincidentally shared two
+     generic words with the surrounding text). It was swapped by hand for the site's other
+     genuine gas-valve photo, reclaimed from faqs.html.
+  c) faqs.html's "checking a water shutoff valve" FAQ slot had, in turn, picked up a photo
+     that is specifically a GAS shutoff valve beside a water heater — accurate to its own
+     gas_line/water_heater_repair tags, but not a true "water shutoff valve" photo. It was
+     swapped for a genuine water-heater shutoff-valve photo instead (freed up by fix b).
+  d) service-areas.html's "map-style graphic" slot (see Section 4) was deliberately left
+     unfilled rather than matched to any real photo.
+All four corrections are reflected in the final allocation and in image-placement-
+manifest.csv.
+
+Area-page limitation (disclosed, not a defect): the 556-image library contains no
+location-specific photography (no street signs, landmarks, or neighborhood-identifiable
+exteriors) for Cottonwood Heights, Sandy Hills, Pepperwood, Hidden Valley, White City, or
+Willow Creek. Six existing IMAGE_SLOT_META placeholders on those pages originally called
+for hyper-local shots (e.g. "Service van parked near Dimple Dell Regional Park
+trailhead," "Welcome sign for the city of White City, Utah"). These slots were filled
+instead with genuinely relevant, generic plumbing-work photography matching each page's
+actual topic (e.g. frozen-pipe repair work for Sandy Hills' freeze-risk content, water-
+softener installation for White City's hard-water content) rather than left empty or
+filled with a fabricated "looks local" substitute. No image on these pages claims a
+specific capture location it does not have.
+
+================================================================================
+12. RESPONSIVE / MOBILE LAYOUT TESTING
+================================================================================
+Tested live (local HTTP server + Playwright/Chromium) at 375px, 414px, 768px, and 1440px
+viewport widths across 6 representative pages (homepage, a service page, a special page,
+contact, an area page, and the service page with the most images):
+  - Horizontal overflow: 0 instances detected (document scrollWidth never exceeded
+    clientWidth) across all 24 page/viewport combinations tested.
+  - Broken / zero-width images: 0 instances.
+  - Visual screenshot spot-check confirmed images render at full column width, uncropped,
+    with captions legible and properly separated from the photo at mobile width.
+All 32 pages share identical CSS (.content-figure / .img-pair, inserted uniformly) and
+near-identical page structure, so this is reported as representative coverage rather than
+an individual pass/fail per page; see image-page-summary.csv for which 6 pages were
+directly viewport-tested versus covered by the site-wide automated checks only.
+
+================================================================================
+13. MOBILE NAVIGATION / HAMBURGER MENU TESTING
+================================================================================
+NOT APPLICABLE TO THIS SITE, DISCLOSED HONESTLY RATHER THAN MARKED "PASSED": this site's
+header (across all pages, unchanged by this image-integration phase) contains only a logo
+and a tel: call button — there is no hamburger icon, no mobile nav drawer, and no multi-
+page navigation menu of any kind to test. Page-to-page navigation happens entirely through
+inline contextual links in body text and the footer. No mobile-menu components (hamburger
+icon, drawer, backdrop, escape-key handler, etc.) exist in the codebase to open, close, or
+test tap response on. This is a pre-existing characteristic of the site's design from the
+original build phase, not something introduced or broken by this image-integration pass.
+
+================================================================================
+14. CTA / INLINE-LINK STYLING CHECK
+================================================================================
+No CTA, button, or inline-link markup or styling was touched by this phase. All image
+insertions used only the new .content-figure/.img-pair selectors, scoped and additive;
+no existing class names, button styles, or link selectors were modified.
+
+================================================================================
+15. LOGO / FAVICON / BRANDING STATUS
+================================================================================
+Completed in an earlier build phase, confirmed still present and unaffected: logo.webp,
+logo-light.webp, favicon.ico, favicon-16x16.png, favicon-32x32.png, favicon-48x48.png, all
+referenced correctly in <head>/header/footer across all pages checked.
+
+================================================================================
+16. GEO-METADATA STATUS
+================================================================================
+PASSED, verified technically: Sandy, UT service-area coordinates (40.5724, -111.8599,
+WGS-84 datum) plus a text description ("Sandy, UT service area") were embedded into the
+EXIF data of all 165 optimized WebP files and confirmed, by reading the metadata back out
+of a sample output file, to survive WebP conversion intact. This coordinate pair matches
+the one already used in this site's LocalBusiness/Plumber JSON-LD "geo" property (added
+in the prior G001 schema-fix pass, sourced from the project dataset's Master Overview
+sheet), so the site does not carry two different "Sandy, UT" coordinate claims in
+different places. None of the 556 source photos carried genuine capture-location GPS data
+(confirmed during initial EXIF inspection), so embedding the service area's own
+coordinates does not overwrite or misrepresent any real capture location — it labels
+these as general content photography representing the Sandy, UT service area, not as
+geotagged photos of specific job sites.
+
+================================================================================
+17. CONTENT PRESERVATION / UNRESOLVED ITEMS / FOLLOW-UP
+================================================================================
+Content preservation: all image insertions were purely additive (new <figure> blocks
+inserted after verified text anchors) or like-for-like placeholder replacements; no
+paragraph, heading, link, price, or CTA text was altered, removed, or reordered anywhere
+on the site. H2/paragraph counts were spot-checked across all 32 pages post-build and are
+consistent with purely additive editing.
+
+Unresolved / flagged for follow-up (not fixed in this pass, disclosed rather than hidden):
+  - service-areas.html's "map-style graphic" slot has no image. A real designed map
+    graphic (SVG or illustration) is a design-asset task, not a photo-selection task, and
+    is recommended as separate follow-up work.
+  - cost.html's "plumber reviewing an estimate with a homeowner on a tablet" slot has no
+    image, for the same reason — no genuine match exists in the current photo library.
+  - 352 usable photos from the source library were not placed anywhere on the site. They
+    remain available in /home/claude/image_work/source_images_raw/photos/ for a future
+    content expansion (e.g. a blog, which this build explicitly excludes per scope) or a
+    later refresh of this same integration.
+  - This site has no mobile hamburger menu to test or build against (Section 13); if one
+    is added in a future phase, the interaction checklist in the governing prompt should
+    be run against it at that time.
+
+================================================================================
+DELIVERABLES
+================================================================================
+  - image-placement-manifest.csv — one row per placed image (165 rows)
+  - image-page-summary.csv — one row per page that received images (32 rows)
+  - IMAGE-INTEGRATION-REPORT.txt — this file
+  - 165 optimized WebP images under /assets/images/content/ in the rebuilt site ZIP
+  - Updated HTML for all 32 in-scope pages (figures inserted, CSS added), packaged in the
+    rebuilt sandy-ut-plumbing-site.zip

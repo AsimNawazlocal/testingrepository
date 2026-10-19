@@ -1,0 +1,83 @@
+
+/* FlowRight-inspired visual system, adapted for Sandy UT Plumbing Experts */
+:root{--ink:#10283b!important;--deep:#062944!important;--teal:#087cb3!important;--teald:#086392!important;--paper:#f1f7fb!important;--panel:#fff!important;--rule:#d9e4eb!important;--hair:#e5edf2!important;--mute:#516374!important;--disp:"Inter",Arial,sans-serif!important;--body:"Inter",Arial,sans-serif!important}
+html{scroll-behavior:smooth}body{font-family:var(--body)!important;background:#fff!important;color:#132d40!important}h1,h2,h3,h4{font-family:var(--disp)!important;font-weight:800!important;letter-spacing:-.045em!important;line-height:1.12!important}a{transition:color .18s,background .18s,transform .18s}.mast{background:#fff!important;box-shadow:0 3px 18px #092b4210!important;border-bottom:1px solid #e6eef2!important;position:sticky;top:0;z-index:100}.mast>.in{max-width:1250px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important}.mast .id{min-width:0}.mast .id b{font-weight:850!important;color:#0b2d43!important;font-size:16px!important;letter-spacing:-.04em}.mast .id>span{color:#63839a!important}.navrow{display:flex!important;align-items:center!important;gap:18px!important}.navrow nav{display:flex;align-items:center;gap:18px}.navrow nav>a,.navdrop>summary{font-weight:700!important;font-size:13px!important;color:#1b3546!important}.navrow nav>a:hover,.navdrop>summary:hover{color:#087db8!important}.navrow .call,.btn{background:#ff721e!important;color:#fff!important;border:0!important;border-radius:999px!important;font-weight:800!important;box-shadow:0 6px 18px #ff721e28!important;padding:13px 21px!important;text-decoration:none!important}.navrow .call:hover,.btn:hover{background:#e65e0e!important;transform:translateY(-1px)}.btn.alt{background:#fff!important;color:#10344a!important;border:1px solid #b6cbd8!important;box-shadow:none!important}.band{border-color:#e3edf2!important}.inner{max-width:1200px!important}.eyebrow,.tick{color:#087db4!important;letter-spacing:.14em!important;font-weight:800!important}#top{background:linear-gradient(90deg,#eef7fc 0%,#f5f9fc 55%,#e6f3fa 100%)!important;position:relative;overflow:hidden}#top .contour{display:none}#top .inner{position:relative;z-index:2}#top h1{max-width:760px;color:#102b3d!important;font-size:clamp(40px,5vw,70px)!important}#top h1 em,.accent{color:#087db4!important;font-style:normal}#top .lede{font-size:17px!important;color:#40576a!important;max-width:640px}#top .sub{color:#516779!important;max-width:680px}#top .checks{color:#153b50!important}#top .brands{border-color:#cfe0eb!important}#services{background:#fff!important}#services h2,#areas h2,#faq h2{color:#10283b!important}#services article,#services .card,#areas article{background:#fff!important;border:1px solid #e0eaf0!important;border-radius:12px!important;box-shadow:0 5px 20px #0c35500a!important;overflow:hidden}#reader{background:#f0f7fb!important}#local{background:#062b46!important;color:#fff!important}#local h2,#local h3{color:#fff!important}#areas{background:#fff!important}#faq{background:#f1f7fb!important}footer{background:#f5f8fb!important;color:#173448!important}footer a{color:#155b85!important}button,input,select,textarea{font-family:var(--body)!important}img{max-width:100%}.fr-kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#087db4;font-weight:900}.fr-home-hero{display:grid;grid-template-columns:1fr 1.03fr;min-height:510px;background:#eef7fc}.fr-hero-copy{padding:65px max(35px,calc((100vw - 1200px)/2)) 45px max(35px,calc((100vw - 1200px)/2));padding-right:30px;align-self:center}.fr-home-hero h1{font-size:clamp(39px,4.4vw,66px);max-width:620px;margin:13px 0 17px}.fr-home-hero h1 span{color:#087db4}.fr-home-hero p{color:#455d70;font-size:16px;line-height:1.6;max-width:550px}.fr-hero-image{background:url('/assets/images/content/emergency-plumber-working-beside-bathroom-cabinet.webp') center /cover no-repeat;min-height:450px;position:relative}.fr-hero-image:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#eef7fc 0%,transparent 24%)}.fr-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.fr-trust{display:flex;gap:24px;flex-wrap:wrap;margin-top:33px;font-size:12px;font-weight:750;color:#26465b}.fr-trust span{display:flex;align-items:center;gap:8px}.fr-trust strong{font-size:23px;color:#087db4}.fr-section{padding:58px max(25px,calc((100vw - 1200px)/2));background:#fff}.fr-heading{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:25px}.fr-heading h2{font-size:clamp(27px,3vw,38px);margin:7px 0 0}.fr-heading a{font-weight:800;font-size:13px;color:#183c53}.fr-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px}.fr-card{border:1px solid #e3edf3;border-radius:12px;overflow:hidden;background:white;box-shadow:0 8px 22px #123a5010}.fr-card img{width:100%;height:155px;object-fit:cover;display:block}.fr-card-body{padding:16px}.fr-card h3{font-size:15px;letter-spacing:-.025em!important;margin:0 0 9px}.fr-card p{font-size:12px;line-height:1.5;color:#536c7e;margin:0 0 14px}.fr-card a{font-size:12px;font-weight:800;color:#087db4}.fr-why{display:grid;grid-template-columns:1fr 1.3fr;background:#edf5fa}.fr-why-lead{background:#062b46;color:white;padding:54px max(30px,calc((100vw - 1200px)/2)) 54px 35px}.fr-why-lead h2{color:white;font-size:37px;margin:10px 0}.fr-why-lead p{line-height:1.6;color:#d2e3ef}.fr-why-grid{display:grid;grid-template-columns:1fr 1fr;gap:27px;padding:55px 45px}.fr-why-grid div{font-size:14px;line-height:1.6;color:#4e677a}.fr-why-grid strong{display:block;font-size:16px;color:#12354b;margin-bottom:4px}.fr-why-grid b{font-size:24px;color:#087db4;margin-right:10px}.fr-bottom-cta{background:#062b46;color:white;padding:28px max(30px,calc((100vw - 1200px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px}.fr-bottom-cta h2{color:#fff;margin:0;font-size:27px}.fr-bottom-cta p{color:#d0e0e9;margin:6px 0 0}.fr-bottom-cta a{white-space:nowrap}
+@media(max-width:900px){.fr-home-hero{grid-template-columns:1fr}.fr-hero-copy{padding:48px 28px}.fr-hero-image{min-height:320px;order:-1}.fr-hero-image:before{background:linear-gradient(0deg,#eef7fc,transparent 45%)}.fr-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.fr-why{grid-template-columns:1fr}.fr-why-lead{padding:40px 28px}.fr-why-grid{padding:35px 28px}.mast>.in{gap:8px!important}.navrow{gap:8px!important}}
+@media(max-width:560px){.fr-cards{grid-template-columns:1fr}.fr-card{display:grid;grid-template-columns:42% 1fr}.fr-card img{height:100%;min-height:160px}.fr-why-grid{grid-template-columns:1fr}.fr-bottom-cta{flex-direction:column;align-items:flex-start}.fr-hero-copy{padding:38px 22px}.fr-home-hero h1{font-size:39px}.fr-trust{gap:14px}.fr-section{padding:42px 20px}.fr-heading{align-items:start;flex-direction:column}.navrow .call{font-size:11px!important;padding:10px 12px!important}}
+
+/* QA contrast repair: original dark-footer heading colors on light redesigned footer */
+footer b, footer strong { color:#173448 !important; }
+footer .legal { color:#345369 !important; }
+footer .legal a { color:#155b85 !important; }
+
+/* Contrast QA: original dark paragraph rules were overriding the navy section. */
+#local .note p, #local .notes p { color: #e7f2f9 !important; }
+#local .note .nk { color: #59c6f2 !important; }
+#local .note { border-bottom-color: rgba(225,241,250,.42) !important; }
+#local .notes { border-top-color: rgba(225,241,250,.65) !important; }
+#local .tick, #local .eyebrow { color: #59c6f2 !important; }
+#local a:not(.btn) { color: #8bdcff !important; }
+
+/* Mobile navigation regression repair: override the redesign's !important flex rule. */
+@media (max-width:1023px){
+  .mast>.in{position:relative;flex-wrap:nowrap!important;min-height:72px;padding:10px 16px!important;gap:10px!important}
+  .mast .id{flex:1 1 auto;min-width:0}
+  .mast .id>a{gap:8px!important;min-width:0}
+  .mast .id img{max-width:105px;height:auto!important;max-height:35px;object-fit:contain}
+  .mast .id b{font-size:clamp(12px,3.2vw,16px)!important;line-height:1.18!important;overflow-wrap:anywhere}
+  .mast .id>span{font-size:10px;letter-spacing:.09em}
+  .navrow{flex:0 0 auto;display:flex!important;position:static!important;margin-left:auto;gap:0!important}
+  .navburger{display:inline-flex!important;align-items:center;justify-content:center;width:44px;height:44px;min-width:44px;border:1px solid #d9e4eb;background:#fff;border-radius:7px;font-size:22px;cursor:pointer;color:#10283b}
+  .navrow .call{display:none!important}
+  .navrow nav{display:none!important;position:absolute;top:100%;left:0;right:0;z-index:110;max-height:calc(100dvh - 80px);overflow-y:auto;overscroll-behavior:contain;background:#fff;box-shadow:0 15px 24px #06294425;border-top:1px solid #d9e4eb;padding:10px 16px 20px;box-sizing:border-box;flex-direction:column!important;align-items:stretch!important;gap:0!important;width:auto!important;order:initial!important}
+  .navrow nav.open{display:flex!important}
+  .navrow nav>a,.navrow .navdrop>summary{width:100%;box-sizing:border-box;min-height:48px;padding:12px 8px!important;display:flex!important;align-items:center;justify-content:space-between;font-family:var(--body)!important;font-size:14px!important;letter-spacing:.025em!important;border-bottom:1px solid #e5edf2;color:#173448!important}
+  .navdrop{width:100%}
+  .navdrop-panel{position:static!important;min-width:0!important;max-height:42dvh!important;overflow-y:auto!important;box-shadow:none!important;border:0!important;margin:0!important;padding:5px 8px 10px!important;gap:0!important}
+  .navdrop-panel a{font-size:14px!important;min-height:42px!important;padding:9px 12px!important;letter-spacing:normal!important}
+  footer .fg{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  footer .legal{font-family:var(--body);font-size:13px;letter-spacing:normal;line-height:1.6;overflow-wrap:anywhere}
+}
+@media(max-width:560px){
+  footer .fg{grid-template-columns:minmax(0,1fr)}
+  footer .in{padding:0 20px}
+  footer p,footer a{overflow-wrap:anywhere}
+  footer{font-size:14px}
+  footer b{font-size:18px}
+  .bar a{font-family:var(--body);font-size:14px;letter-spacing:.02em}
+}
+
+/* Final static contrast hardening: dark-background content and focus states. */
+#local, #local p, #local li, #local .areanote, #local .verd p, #local .ans p {color:#e7f2f9!important}
+#local .note p, #local .notes p {color:#e7f2f9!important}
+#local .note .nk, #local .eyebrow, #local .tick {color:#59c6f2!important}
+#local .note, #local .notes {border-color:rgba(225,241,250,.45)!important}
+#local .areas span {color:#e7f2f9!important;border-color:rgba(225,241,250,.35)!important}
+#local summary {color:#f2f8fc!important}
+#local a:not(.btn) {color:#8bdcff!important}
+footer p,footer li,footer .legal,footer .legal p{color:#345369!important}
+footer a,footer .legal a{color:#155b85!important}
+footer b,footer strong,footer h2,footer h3{color:#173448!important}
+.navburger:focus-visible,.navrow nav a:focus-visible,.navdrop>summary:focus-visible,footer a:focus-visible{outline:3px solid #e46a14!important;outline-offset:3px!important}
+@media(max-width:1023px){.navrow nav:not(.open){display:none!important}.navrow nav.open{display:flex!important}}
+
+
+/* Shared FlowRight-style split hero for all interior pages */
+.inner-page-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.03fr);background:#eef7fc;min-height:480px;overflow:hidden;isolation:isolate}
+.inner-page-hero .inner-hero-copy{align-self:center;min-width:0;padding:54px 34px 54px max(30px,calc((100vw - 1200px)/2));}
+.inner-page-hero .inner-hero-copy .crumb{font-size:12px;line-height:1.6;margin:0 0 16px;color:#426176}
+.inner-page-hero .inner-hero-copy .crumb a{color:#12688e}
+.inner-page-hero .inner-hero-kicker{color:#087db4;font-weight:850;letter-spacing:.17em;font-size:11px;text-transform:uppercase;margin-bottom:15px}
+.inner-page-hero h1{font-size:clamp(36px,4.2vw,65px)!important;line-height:1.08!important;letter-spacing:-.045em!important;color:#10283b!important;margin:0 0 22px;overflow-wrap:break-word}
+.inner-page-hero .inner-hero-lede{font-size:16px;line-height:1.65;color:#405b6e;max-width:600px;margin:0 0 20px}
+.inner-page-hero .inner-hero-checks{display:flex;flex-wrap:wrap;gap:9px 18px;font-size:12px;font-weight:700;color:#244d65;margin:20px 0}
+.inner-page-hero .inner-hero-checks>div{display:flex;align-items:center;gap:6px}
+.inner-page-hero .inner-hero-checks i{display:inline-block;width:7px;height:7px;background:#0785bc;border-radius:50%}
+.inner-page-hero .inner-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:23px 0 0}
+.inner-page-hero .inner-hero-actions .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px}
+.inner-page-hero .inner-hero-visual{min-height:480px;position:relative;background:#d9e7ee;overflow:hidden}
+.inner-page-hero .inner-hero-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.inner-page-hero .inner-hero-visual:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#eef7fc 0%,rgba(238,247,252,.15) 18%,transparent 35%)}
+.inner-hero-photo-credit{font-size:12px;color:#526b7a;max-width:1200px;margin:10px auto 0;padding:0 25px}
+@media(max-width:900px){.inner-page-hero{grid-template-columns:1fr}.inner-page-hero .inner-hero-copy{padding:42px 28px}.inner-page-hero .inner-hero-visual{min-height:300px;max-height:390px;order:2}.inner-page-hero .inner-hero-visual:after{background:linear-gradient(180deg,#eef7fc00 75%,#eef7fc22)}.inner-page-hero h1{font-size:clamp(34px,6vw,52px)!important}}
+@media(max-width:560px){.inner-page-hero .inner-hero-copy{padding:30px 22px 36px}.inner-page-hero .inner-hero-visual{min-height:225px;height:245px}.inner-page-hero h1{font-size:clamp(32px,9vw,43px)!important}.inner-page-hero .inner-hero-lede{font-size:15px}.inner-page-hero .inner-hero-actions{gap:10px}.inner-page-hero .inner-hero-actions .btn{font-size:12px!important;padding:12px 15px!important}.inner-page-hero .inner-hero-checks{gap:8px 12px}}

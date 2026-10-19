@@ -1,0 +1,415 @@
+SANDY, UT — PLUMBING LEAD-GEN SITE — BUILD REPORT
+Stage 1 (No Blog) — Master Build Prompt v1
+Brand: Sandy UT Plumbing Experts
+Domain: sandyutplumbingexperts.com
+Build date: October 2026
+
+====================================================================
+1. TEMPLATE AUDIT (Batch 0)
+====================================================================
+Supplied design reference: preview-142-sandy-ut.html, branded "Little
+Cottonwood Plumbing." Audited and NOT reused as-is:
+- Brand swapped to the dataset's generated brand, "Sandy UT Plumbing
+  Experts" (the dataset's own Brand Name field), not the template's
+  demo brand.
+- Visual system (color tokens, typography — Patua One display /
+  Anybody body — spacing, card/CTA patterns) carried forward and
+  reused consistently across all 34 pages.
+- No forms anywhere on the template or the finished site — fully
+  call-only (tel:) architecture throughout, matching the standing
+  compliance rule.
+- No AggregateRating, Review, HowTo, or BlogPosting schema present
+  anywhere in the finished site, confirmed by a full JSON-LD sweep at
+  self-check.
+
+====================================================================
+2. LOCAL RESEARCH & VERIFICATION
+====================================================================
+Primary source: Final_50_City_Master_Dataset.xlsx, Sandy row (Launch
+#10). All dataset claims were checked against independent sources
+before use, not taken at face value:
+
+- Sandy Springs, GA keyword contamination: several dataset keyword
+  rows for Sandy (e.g. "emergency plumber sandy springs",
+  "trenchless plumber sandy springs ut") were flagged as the same
+  misattribution pattern seen in other cities in this portfolio.
+  These were excluded from on-page content and from any
+  priority/demand reasoning.
+- Soil claim correction: the dataset's "caliche" soil risk-factor
+  language (a Texas/Arizona desert-soil term) was checked via web
+  search and replaced on the Slab Leak page with locally accurate
+  "clay-heavy, expansion-prone soil" language for the Salt Lake
+  Valley.
+- Tankless water heater lifespan: the dataset's "18–25 years" claim
+  was checked against Rheem's published range (15–20 years typical,
+  25–30 well-maintained) and softened to "15–25 years" on the FAQs
+  page to avoid repeating an unverified upper bound.
+- Cost Pages sheet (9 usable Sandy rows; Sump Pump pre-excluded in
+  the sheet) was cross-checked against independent sources before
+  the /cost/ page shipped: HomeServe's Utah-specific water heater
+  data ($1,537 Utah average, ~10% above the $1,396 national average)
+  supports the dataset's $1,200–$2,800 tank-replacement range;
+  HomeAdvisor/Bob Vila whole-house PEX repiping figures and
+  Angi/thepricer/Fixr CIPP lining per-linear-foot data ($80–$250/ft)
+  were checked against the repiping and trenchless-lining ranges. All
+  9 dataset ranges held up as reasonable and were kept unchanged.
+- Verified real local specifics used across the site (not
+  fabricated): Old Mill/Cottonwood Paper Mill ruins and the Big
+  Cottonwood Canyon mouth (Cottonwood Heights); Dimple Dell Regional
+  Park and Alta Canyon Drive (Sandy Hills); America First Field at
+  9256 S State St (confirmed as the real Salt Lake MLS stadium, not a
+  contamination artifact); White City's 1955 founding by M. Kenneth
+  White, its May 1 2024 incorporation, and its own separate water
+  utility (White City Water Improvement District) — confirmed via
+  real street-level address data for Pepperwood Dr/Pt, Hidden Valley
+  Dr/Blvd/Rd/Club Dr, and Willow Creek Dr/Estates.
+- Business address, GPS coordinates, and phone (placeholder) pulled
+  from the dataset's Master Overview sheet, used as-is (verified
+  fields, not demand-insight columns).
+
+====================================================================
+3. EXCLUDED-SERVICE STRIP CONFIRMATION
+====================================================================
+- Septic, Sump Pump, Backflow: fully excluded. Confirmed via a
+  sitewide text sweep — 0 mentions of these as offered services
+  anywhere on the finished site (one Water Softener page mention of
+  "backflow protection" is a required code item on an installation,
+  not an offered Backflow service — checked and confirmed a false
+  positive).
+- Water Damage: restricted to extraction/drying only. The Water
+  Damage Restoration page explicitly scopes mold remediation OUT
+  ("a separate specialist's job... we'll tell you plainly rather than
+  attempt mold remediation ourselves") since Mold is not one of
+  Sandy's 19 approved service pages.
+- Mold: excluded entirely — not one of Sandy's 19 approved pages.
+- 19 of 19 approved service pages built (post-exclusion count from
+  the dataset's Master Overview sheet matches exactly).
+
+====================================================================
+4. PER-PAGE WORD COUNTS
+====================================================================
+See page-inventory.csv for the full list (34 URLs). Summary:
+
+- 19 service pages + 6 area/location pages: all verified to contain
+  1,000+ meaningful words in rendered <main>, per the master prompt's
+  explicit Section 1 requirement. Range: ~1,005–1,093 words.
+- IMPORTANT CORRECTION: during final-deliverables prep, a defect was
+  found in the word-counting method used throughout this build. The
+  function stripped known non-content divs/figures/comments but never
+  removed the page's embedded <style> block before counting words,
+  so every per-batch count reported and approved earlier in this
+  build (e.g. "water heater installation 1080," "tankless 1031," all
+  6 area-page counts) was inflated by roughly 300–350 words of raw
+  CSS property text being counted as content. Once corrected (CSS and
+  script blocks stripped, count restricted to rendered <main> only,
+  matching the master prompt's literal wording), every one of the 25
+  service/area pages was actually below the 1,000-word floor — true
+  counts ranged ~667–757 words before the fix.
+  This was caught and fixed before delivery: 2–3 new genuine,
+  non-filler <h2> sections were added to each of the 25 pages (real
+  troubleshooting detail, process explanation, or area-specific
+  operational detail — never padding or repetition), written to
+  extend each page's already-established scope without duplicating
+  its own existing headings or another page's anti-cannibalization
+  boundary. All 25 pages were re-verified after the fix using the
+  corrected method and now genuinely clear the floor. A full
+  duplicate-heading-sequence check and a forbidden-phrase/em-dash/
+  form/excluded-service resweep were both re-run after the fix and
+  came back clean (2 new automated hits, both verified false
+  positives: "cheaper" as a cost comparison, "wax-free" as a compound
+  word).
+- Supporting pages (FAQs, Cost, Services hub, Areas hub, Contact,
+  About, Privacy, 404) have no word floor per Section 1 (explicitly
+  scoped to service/area pages only) and range from 33 words (404) to
+  1,281 words (Cost).
+- Homepage: 1,485 words (no floor applies, built in an earlier
+  session).
+
+====================================================================
+5. AREA-PAGE ACCEPT/REJECT (LeadSmart ZIP coverage gate)
+====================================================================
+Full reasoning for all 19 Tier 1/Tier 2 candidates is in
+area-page-coverage.csv. Summary:
+
+- Gate standard used (per Farza's explicit answer when asked): solid
+  ZIP overlap only — a verified ZIP must be a real postal ZIP for
+  that place; a boundary-edge touch does not count.
+- Tier 1 (15 candidates): 2 passed (Cottonwood Heights, Sandy Hills),
+  13 failed (Draper, Midvale, South Jordan, South Jordan Heights,
+  West Jordan, Riverton, Murray, Holladay, Taylorsville, Millcreek,
+  East Millcreek, Kearns, Herriman) — all 13 are listed by name on
+  the /service-areas/ hub as "towns we get asked about," with an
+  honest note that their ZIPs fall outside verified coverage, never
+  implied as covered.
+- Tier 2 (4 candidates): all 4 passed both the ZIP gate and an
+  independent real-demand check (Pepperwood, Hidden Valley, White
+  City, Willow Creek).
+- 6 of 19 candidates built as standalone area pages.
+
+====================================================================
+6. PHONE NUMBER STATUS
+====================================================================
+PLACEHOLDER — not a real line. +1 (385) 555-0103 uses the real Sandy,
+UT area code (385) with the reserved NANP 555 exchange, per the
+dataset's own Phone Status field. Used consistently sitewide,
+including in every page's Plumber JSON-LD schema (telephone field)
+and the footer legal line, which explicitly states it is a
+placeholder. Must be replaced with a purchased local DID before
+launch. No separate Water Damage tracking number exists for this
+city (confirmed via the dataset's own "Water Damage Phone: None"
+field), so there was no misrouting risk to design around.
+
+====================================================================
+7. LOGO & FAVICON
+====================================================================
+No separate logo-generation workflow document was supplied in this
+session, so an original wordmark was designed in-house, matching the
+site's own established color system and Patua One display typography:
+a teal square icon with an off-white water-droplet mark, paired with
+"Sandy UT / Plumbing Experts" text. Two color variants (dark-text for
+the light header, light-text for the dark footer). No fabricated
+badges, certifications, or awards in the mark. Converted to spec:
+primary logo as WebP (800px wide, quality 90); favicon.ico
+(multi-size 16/32/48); PNG favicons at 16/32/48/192/512px;
+apple-touch-icon at 180×180. All wired into the header and footer of
+every one of the 34 pages, plus favicon link tags in every <head>.
+
+====================================================================
+8. SELF-CHECK RESULTS (Section 5 known-issue table)
+====================================================================
+- CSS class collisions: none found — each page's CSS is self-
+  contained and consistently namespaced across the whole site.
+- Paragraph-array-joined-into-one-<p> bug: none found — every
+  paragraph renders as its own <p>, verified programmatically.
+- Water-Damage-vs-main-number misrouting: not applicable (no separate
+  Water Damage number exists for this city) — confirmed only one
+  phone number is used sitewide, including in every JSON-LD block.
+- Nav breaking past 10–12 items: not applicable — nav has only 6
+  top-level items (Home, Services, Areas, Cost, FAQs, Contact).
+- Mobile menu: there is no toggle/hamburger menu to fail — the nav is
+  a static wrapping flex layout plus a sticky bottom call bar on
+  mobile. Confirmed via a 390px-wide screenshot: fully functional (44
+  px minimum tap targets, no overlap, call bar works), though the nav
+  wraps to two rows on narrow phones, using more vertical space than
+  ideal. Not fixed — flagged as a minor cosmetic item.
+- FAQ DOM/schema drift: FAQPage JSON-LD is built from the exact same
+  data list used to render the visible FAQ HTML, guaranteeing 1:1
+  parity by construction. Verified programmatically: 10/10 exact
+  matches, 0 mismatches.
+- Repeated page skeletons: a structural spot-check across multiple
+  service pages confirmed genuine section-order and placement
+  variation (CTA position, image-slot position, and section order all
+  differ page to page), not a rotated skeleton. A full exact-sequence
+  duplicate-heading check across all 34 pages found 0 duplicates.
+
+ADDITIONAL FINDINGS FROM THE FULL ROUTE/LINK/METADATA/SCHEMA SWEEP:
+- CRITICAL (fixed): /services/ was linked from the nav and footer of
+  every page on the site, but no such page had been built — a dead
+  link across all 33 pages that existed at that point. Caught during
+  the full sitewide link-resolution sweep (earlier per-batch checks
+  only verified links within each new batch, never the whole site).
+  Fixed by building a Services index/hub page mirroring the existing
+  /service-areas/ hub pattern (card grid of all 19 service pages in 5
+  categories). Re-ran the full link sweep after — 0 broken internal
+  links sitewide.
+- Fixed: homepage was missing its <link rel="canonical"> tag —
+  added.
+- Fixed: About, Contact, and Cost pages had no Plumber JSON-LD schema
+  at all, inconsistent with every other page — added the same schema
+  block used sitewide. Privacy and 404 intentionally left without
+  business schema (standard practice for legal/error pages).
+- Fixed: no sitemap.xml or robots.txt existed — both added at the
+  site root (33 URLs in the sitemap; robots.txt allows all, disallows
+  /404/, points to the sitemap).
+- CRITICAL (fixed, see Section 4 above): the word-count floor
+  violation on all 25 service/area pages, caused by a measurement bug
+  in the build tooling, not a content-writing shortfall.
+- Not fixed, flagged only: image-slot counts sit below the master
+  prompt's own flexible "roughly 5–10 on service/area, roughly 3–5 on
+  Contact/FAQ/Cost" guidance (service/area pages have 3 each, Contact
+  has 1, FAQs/Cost have 2 each). The spec explicitly calls this
+  guidance flexible and not a hard quota; left as-is but noted in
+  case more slots are wanted before the image-integration stage.
+
+====================================================================
+9. OPEN ITEMS / DECISIONS NEEDED FROM FARZA
+====================================================================
+1. Phone number: replace the +1 (385) 555-0103 placeholder with a
+   real purchased local DID before launch (affects visible copy and
+   every page's JSON-LD telephone field).
+2. Image slots: decide whether to add more slots to reach the master
+   prompt's suggested 5–10 (service/area) / 3–5 (Contact/FAQ/Cost)
+   range before the image-integration stage, or proceed with the
+   current counts (3 and 1–2 respectively), which the spec treats as
+   acceptable given it calls the guidance flexible.
+3. Mobile nav: optional polish — the 6-item nav wraps to two rows on
+   narrow phones. Fully functional, not broken; a design call on
+   whether it's worth tightening before launch.
+4. Email activation: contact@sandyutplumbingexperts.com appears
+   sitewide as a mailto: link. Per the master prompt, this is
+   reported as "Not tested" — mail hosting/DNS has not been verified
+   for this address.
+5. Word-count measurement bug (Section 4): flagging this explicitly
+   so the per-batch figures recorded during this build's approval
+   gates are understood to have been inflated at the time they were
+   approved. The actual written content was always real, non-filler
+   content — the defect was in how it was measured, not in what was
+   written — but it's worth knowing for any future city builds using
+   the same tooling pattern, in case the same wc() bug exists in
+   scripts reused from this build for other cities in the portfolio.
+
+====================================================================
+10. POST-LAUNCH COVERAGE AUDIT ADDENDUM (2026-10-13)
+====================================================================
+A separate, independent City Site Coverage Audit was run against this
+build (read-only pass across all 14 dataset sheets + the call-
+intelligence workbook; 159-row requirements traceability matrix,
+96.2% scoreable coverage, 100% restricted-data non-exposure). Full
+detail: CITY_SITE_COVERAGE_AUDIT_REPORT.html, delivered separately.
+
+One site-level fix from that audit was approved and implemented on
+2026-10-13:
+- Added schema.org GeoCoordinates (latitude 40.5724, longitude
+  -111.8599, from the dataset's Master Overview sheet) to the
+  "address" object inside the Plumber JSON-LD block on all 31 pages
+  that carry that schema (homepage + 30 of 33 /pages/ files; the
+  3 pages without business schema - FAQs, Privacy, 404 - are
+  unaffected by design, consistent with the original build). Verified:
+  all 31 files contain exactly one new "geo" property, every JSON-LD
+  block on the site still parses as valid JSON, and the ZIP was
+  rebuilt and re-verified (34 HTML pages, matches the prior build).
+
+Remaining open items from the audit (not site-level fixes - dataset-
+level issues for the workbook owner, not implemented here): the
+Master Overview "Demographics & Housing Age Profile" field contains
+duplicated/wrong data for Sandy; ~28% of the Master Keyword Bank's
+"Sandy, UT" rows are actually "Sandy Springs, GA" keyword-tool
+phrases (confirmed never used in this site's content); the CMS
+"Services (25 Form-Ready...)" field is stale; the Service Page
+Content Coverage tab is still missing 2 of Sandy's 19 live services;
+and the Master Overview "Tier 1 Area Count: 15" field doesn't
+reflect the ZIP-overlap gate that correctly reduces it to 2 pages.
+The phone-placeholder open item (Section 9, #1) also remains open -
+no real DID was available to swap in during this fix pass.
+
+
+====================================================================
+11. IMAGE INTEGRATION PHASE ADDENDUM (2026-10-13)
+====================================================================
+A separate image-optimization-and-integration pass was run against
+this build, using 556 real, licensed plumbing photos supplied by the
+user. Full detail: IMAGE-INTEGRATION-REPORT.txt, image-placement-
+manifest.csv, image-page-summary.csv, delivered alongside this file.
+
+Summary: 517 of 556 source photos passed a topic/watermark/defect
+exclusion screen (manual visual review of all photos via contact
+sheets, not automated filename trust alone); 165 of those 517 were
+selected and placed across 32 of the site's 34 pages (404.html and
+privacy.html excluded by design, same as the original build and the
+coverage-audit pass). All images were converted to optimized WebP
+(13.7MB -> 7.2MB, 47.9% reduction), given unique SEO-friendly
+filenames, unique alt text and non-templated captions, and Sandy, UT
+service-area GPS metadata matching the coordinate pair already used
+in this site's JSON-LD geo property (40.5724, -111.8599). All 34
+existing IMAGE_SLOT_META placeholder figures across the site were
+either replaced with real images or, where no genuinely relevant
+photo existed (2 slots: cost.html's homeowner-with-tablet scene and
+service-areas.html's map-style graphic), cleanly removed rather than
+left as visible placeholder boxes.
+
+Two known, disclosed limitations: this photo library contains no
+location-specific (street-sign/landmark) photography for the 6 area
+pages, so their hyper-local placeholder slots were filled with
+genuinely relevant generic plumbing-work photography instead, never
+a fabricated location claim; and this site's header has no mobile
+hamburger menu or nav drawer to test (contact-free, call/logo-only
+header, same as the original build), so the governing prompt's
+mobile-menu-interaction checklist was reported as not applicable
+rather than marked passed. Full QA results (0 broken references, 0
+duplicate images, 0 missing/duplicate alt text, 0 media-before-H1
+violations, 0 horizontal-overflow issues across 24 tested viewport
+combinations) are in IMAGE-INTEGRATION-REPORT.txt, Sections 6-12.
+
+
+====================================================================
+12. RESPONSIVE/VISUAL/INTERACTION QA + REPAIR PHASE ADDENDUM (2026-10-13)
+====================================================================
+A dedicated visual QA, responsive-design, and interaction-testing pass was
+run against this build (live Chromium rendering, not source review alone).
+Full detail: RESPONSIVE-VISUAL-QA-REPORT.txt and responsive-issue-
+manifest.csv, delivered alongside this file.
+
+One confirmed, site-wide defect was found and fixed at root cause: the
+footer's mailto email link (contact@sandyutplumbingexperts.com, duplicated
+in contact.html and privacy.html) did not wrap at narrow mobile widths,
+causing 9-29px of horizontal overflow at 320px. Fixed with one scoped CSS
+rule (a[href^="mailto:"]{overflow-wrap:break-word;word-break:break-word})
+added to all 34 pages; verified 0px overflow site-wide after the fix across
+238 page/viewport checks (320-1920px).
+
+All 5 known network-wide failure patterns from the governing audit (footer
+column overflow, tablet nav cutoff at 768px, header text clipping, mobile
+hamburger/dropdown failures, false broken-image flags) were explicitly
+tested: 3 confirmed not present in this site's design (footer is single-
+column, nav wraps cleanly via flex-wrap, no header clipping found), 1 not
+applicable (this site has no hamburger/drawer component - it uses a static
+wrapping nav bar plus a fixed mobile call bar instead, both verified
+working), and 1 flagged automated false-positive caught and dismissed after
+isolated re-verification (0 actually-broken images site-wide).
+
+Interactive components tested and passing: the homepage's native
+<details>/<summary> FAQ accordion and its custom JS elevation-pressure
+slider widget. 0 broken internal links across all 34 pages (exhaustive
+crawl). One informational, non-rendering finding not fixed in this pass:
+/about/ and /privacy/ have no inbound internal links anywhere on the site
+(reachable only by direct URL or the sitemap) - flagged as a navigation-
+architecture recommendation for Farza to decide on, not auto-fixed.
+
+Not tested (disclosed, not assumed): Firefox and WebKit/Safari engines
+(only Chromium was available in this environment); physical iPhone/Android
+devices (viewport emulation only).
+
+
+====================================================================
+13. MASTER AUDIT/POSTMORTEM + APPROVED FIX-IMPLEMENTATION ADDENDUM (2026-10-13)
+====================================================================
+A full-site audit and build postmortem was run against this build (read-only
+pass; full detail in PLUMBING_WEBSITE_AUDIT_REPORT.html, audit-issue-
+register.csv, page-coverage.csv, BUILD-POSTMORTEM.txt, delivered alongside
+this file). Farza replied "approved" to the full prioritized fix plan, and
+the following were implemented in verified batches (full detail in
+CHANGE-LOG.txt):
+
+- F-01 (Critical): the sitewide "Licensed and insured" / "Licensed Emergency
+  Plumber" claim had no backing license number anywhere. No real license
+  number was supplied, so the claim was removed (not fabricated) from the
+  .checks block on 31 pages, the <title>/<h1> of all 6 area pages, and the
+  FAQ answer text (visible copy + matching JSON-LD) on faqs.html and
+  index.html. Verified 0 remaining "licens" matches sitewide, schema still
+  valid, FAQPage still 10/10, all 25 service/area pages still above the
+  1,000-word floor.
+- F-03 (Medium): /about/ and /privacy/ were orphaned (0 inbound internal
+  links). Added both to the shared footer .legal line on all 34 pages.
+  Verified 0 orphans remain.
+- F-02 (Medium): the placeholder phone number was disclosed only in small
+  footer print, not near the primary CTAs. No real DID was available, so a
+  title/aria-label disclosure was added to the sticky mobile call bar and
+  header call button on all 34 pages, with zero CSS/layout changes (to avoid
+  any risk to the responsive fix from the prior QA phase). Verified 0
+  overflow regressions across 24 re-tested page/viewport combinations. NOT
+  fully resolved - still needs a real phone DID.
+- F-04/F-05 (Low, optional polish): added alt text to the 34 footer logo
+  instances (the header logo's empty alt was found to already be correct
+  on inspection - it sits beside visible brand text in the same link).
+  Re-encoded 5 oversized content images at WebP quality 80 (modest ~35KB
+  combined savings).
+- F-06 and full resolution of F-02 remain open - both require real owner
+  data (an actual phone DID; confirmation the published address is
+  appropriate to publish) and cannot be resolved by a further site edit.
+
+Final ZIP rebuilt and re-verified by extracting into a fresh temporary
+directory: 0px overflow at 320px on 5 representative pages, "licensed" text
+confirmed absent from rendered output, 0 broken links, 0 orphans, all JSON-LD
+still valid. This site is NOT yet launch-ready per the governing audit
+prompt's own rule: a placeholder phone number (F-02) and an unconfirmed
+published address (F-06) both remain, pending real owner data.

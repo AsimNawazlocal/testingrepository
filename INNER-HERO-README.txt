@@ -1,0 +1,1 @@
+Inner page hero redesign: 33 pages under /pages. Original page-specific H1, intro, breadcrumb, checklist and CTA are reused; first existing page image becomes hero photo. Homepage unchanged. Source photo captions retained beneath hero. Responsive layout 320px+. Telephone details unchanged. Browser-based production QA still recommended.

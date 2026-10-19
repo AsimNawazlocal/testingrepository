@@ -1,0 +1,13 @@
+SANDY UT PLUMBING - FINAL STATIC REGRESSION
+HTML pages: 35
+Pages with hamburger: 35
+Pages with primary nav: 35
+Pages with repaired CSS: 35
+Pages with footer: 35
+Pages with viewport meta: 35
+
+Changes: strengthened contrast selectors for #local dark sections, light footer and focus indicators. Kept mobile navigation hidden unless .open.
+
+Browser execution limitation: Chromium blocked even data: URLs with ERR_BLOCKED_BY_ADMINISTRATOR; direct live Cloudflare request failed DNS resolution in this environment. Therefore all-page rendered screenshots, computed contrast and actual live menu interactions could not be certified.
+
+Deployment: updated package can be uploaded for staging, but do not label full live browser QA passed.

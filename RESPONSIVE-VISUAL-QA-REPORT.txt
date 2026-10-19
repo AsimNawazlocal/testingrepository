@@ -1,0 +1,244 @@
+SANDY UT PLUMBING EXPERTS — RESPONSIVE/VISUAL/INTERACTION QA & REPAIR REPORT
+Phase: Visual QA, Responsive Design, Interaction Testing + Repair
+(follows the Image Integration phase; baseline is this site's current state, which
+includes all 165 integrated photos)
+Date basis: single build/audit pass, this session
+
+================================================================================
+1. PROJECT / STACK
+================================================================================
+Static HTML site, no build step, no framework, no package.json. 34 pages total
+(homepage + 33 files under /pages/). Served for testing via a plain local HTTP
+server (python3 -m http.server) from the site root; the production deployment
+target uses clean URLs (e.g. /water-heater-repair/) resolved by the hosting
+platform's own routing, so tests below hit the equivalent file paths directly
+(e.g. /pages/water-heater-repair.html) rather than the clean URLs, which a local
+static file server cannot resolve without a routing layer. This does not affect
+the validity of the rendering/layout/interaction results, which are per-file.
+
+================================================================================
+2. ROUTE / PAGE-TYPE COVERAGE
+================================================================================
+All 34 routes were inventoried and crawled for link integrity (exhaustive).
+Representative-template deep testing (10 required viewports) was run on 11
+pages, one per distinct template/page-type: homepage, a service page
+(water-heater-repair), an area page (plumber-sandy-hills-ut), contact, about,
+cost, faqs, services (hub), service-areas (hub), privacy, and 404. Templates not
+individually deep-tested (the other 18 service pages and 5 area pages) share
+byte-for-byte identical header/footer/nav/CSS structure with their tested
+sibling template and were covered instead by an exhaustive overflow sweep (see
+Section 4) across all 34 pages at 7 widths (320/375/414/768/1024/1440/1920px, 238
+checks total) plus a full-site broken-image and console-error sweep (34 pages).
+This is sampled-deep + exhaustive-shallow coverage, stated explicitly per the
+governing instructions rather than claimed as exhaustive-deep.
+
+================================================================================
+3. BUILD / RUNTIME / CONSOLE STATUS
+================================================================================
+No build step exists for this static site. All 34 pages return HTTP 200.
+Console errors: 0 across all 34 pages (checked with error-level console listener
+attached + pageerror listener, full page scroll triggered on each to settle any
+lazy behavior). No uncaught exceptions, missing imports, or CSS loading failures
+found.
+
+================================================================================
+4. HORIZONTAL OVERFLOW
+================================================================================
+CONFIRMED AND FIXED (1 issue, site-wide root cause):
+All 34 pages' shared footer (plus a duplicate occurrence in contact.html's
+".infocard" and a second body-text occurrence in privacy.html) contained the
+unwrapped email address "contact@sandyutplumbingexperts.com" as a mailto link
+with no break opportunity. At 320px this overflowed the viewport by 9px (most
+pages), 19px (privacy.html, extra body-text occurrence), and 29px
+(contact.html, extra .infocard occurrence) — confirmed by direct DOM
+measurement (`document.documentElement.scrollWidth` vs `clientWidth`) and by
+screenshot. See Section 9 for the fix and Section 11 for before/after evidence.
+
+After the fix: a full regression sweep of all 34 pages at 7 widths (320, 375,
+414, 768, 1024, 1440, 1920px — 238 checks) found 0 pages with horizontal
+overflow beyond the standard ~15px scrollbar/rounding tolerance, and a
+dedicated 320px-only resweep of all 34 pages found 0px of overflow on every
+page (exact match, not just within tolerance).
+
+No other horizontal overflow was found anywhere else on the site at any tested
+viewport.
+
+================================================================================
+5. KNOWN NETWORK FAILURE PATTERNS — TARGETED RESULTS
+================================================================================
+A. Footer column overflow on narrow mobile — NOT PRESENT / PASS.
+   This site's footer has only 3 simple stacked blocks (brand+contact, Hours,
+   Serving) in a single responsive column, not a multi-column Services/Company
+   link grid. It stacks cleanly at 320/375/390/414px (screenshot
+   shot_footer_320.png) with no overflow once the mailto fix (Section 4) was
+   applied. Every link remains reachable.
+
+B. Tablet desktop-navigation cutoff at 768px — NOT PRESENT / PASS.
+   This site's interior-page header nav (Home/Services/Areas/Cost/FAQs/Contact)
+   uses `flex-wrap:wrap` with no fixed widths, so at 768px the row wraps onto
+   its own line beneath the brand block rather than clipping (screenshot
+   shot_header_768.png). The desktop call-to-action button is deliberately
+   hidden below 780px and replaced by a fixed bottom call bar — confirmed
+   exactly one of the two is visible at every one of 10 viewports across 5
+   representative pages (50 checks, 0 failures) with no brand-text/CTA overlap.
+
+C. Header brand/location text clipping — NOT PRESENT / PASS.
+   Brand name ("Sandy UT Plumbing Experts") and location label ("Sandy, Utah")
+   were measured against the header's right edge at every tested width on 11
+   pages; 0 instances of the brand block overflowing the header or overlapping
+   the call button/nav links.
+
+D. Mobile hamburger and dropdown failures — NOT APPLICABLE, disclosed rather
+   than marked Pass. This site has no hamburger icon, drawer, overlay, or
+   dropdown component anywhere in its markup or CSS (confirmed by full-site
+   search). Navigation on mobile/tablet is the same static flex-wrap nav bar
+   used at every width (tested and working, see B above), paired with a fixed
+   bottom call bar. There is nothing matching this pattern to test.
+
+E. False broken-image flags — ONE FALSE POSITIVE CAUGHT AND DISMISSED. An
+   initial automated sweep using a reused browser page across sequential
+   page.goto() calls logged 5 "requestfailed" network events, apparently
+   attached to the wrong route due to an in-flight request from the previously
+   loaded page bleeding into the next iteration's event log (a test-harness
+   artifact, not a lazy-loading issue — these are new-build photos without
+   `loading="lazy"` complications beyond standard lazy attributes already used
+   correctly). A clean, isolated re-test (fresh browser page per route, full
+   page scroll to settle any lazy loading, then checking `img.naturalWidth`)
+   found 0 actually-broken images on all 6 affected routes and, extended to a
+   full-site sweep, 0 broken images across all 34 pages. Recorded as a dismissed
+   false positive with the evidence that disproved it, per Ground Rule 2.
+
+================================================================================
+6. INTERACTION TESTING
+================================================================================
+Homepage FAQ mini-accordion (native <details>/<summary>, 5 instances): tested
+programmatically — starts closed, opens on click, uses the browser's native
+toggle behavior (no custom JS required, so it is inherently keyboard-
+accessible and has no event-handler/ID-collision risk). Pass.
+
+Homepage elevation-pressure slider (custom range input + JS): tested by
+dispatching an input event at a sample value (500) and reading back all four
+live-updating outputs (elevation, pressure zone, static pressure, verdict
+text) — all updated correctly and consistently with the value set. Pass.
+
+faqs.html's own FAQ list uses static, always-visible ".faqitem" blocks, not a
+collapsible accordion — there is nothing to toggle-test there; this is a
+content/design choice (all answers visible by default), not a broken
+interaction.
+
+Mobile/tablet hamburger menu tests, dropdown tests, drawer scroll-lock tests,
+escape-key tests, and backdrop-click tests: NOT APPLICABLE — see Pattern D in
+Section 5. No such component exists on this site.
+
+Inline text links vs. button styling: sampled 7 inline body-text links on a
+representative page; 0 were styled as block/inline-block buttons with a
+background fill (the conflict this check looks for). CTA buttons (.call,
+.btn, .bar) remain visually and semantically distinct from inline links.
+
+Forms: none exist on this site by design (confirmed in the footer's own legal
+text: "No enquiry form is used or collected by this page"). Not applicable.
+
+================================================================================
+7. LINKS, ACCESSIBILITY, FRONTEND HEALTH
+================================================================================
+Internal links: 0 broken, out of every href on every one of the 34 pages,
+checked against the real route set and the real /assets/ file tree
+(exhaustive, programmatic).
+
+Orphaned pages (informational finding, not a rendering defect): /about/ and
+/privacy/ exist, return 200, and are listed in sitemap.xml, but nothing on the
+live site (header, footer, or body text of any other page) links to either of
+them — they're reachable only by typing the URL directly or via a search
+engine that's crawled the sitemap. This is a navigation-completeness/content-
+architecture observation, not fixed in this pass since it falls outside this
+phase's visual/responsive/interaction repair scope and changing site
+navigation structure is a design decision better made explicitly rather than
+silently during a QA pass; flagged here for the site owner's decision (see
+Section 10).
+
+Accessibility spot-checks: 0 pages missing an H1 (exactly 1 per page, 34/34).
+0 <img> tags missing an alt attribute entirely (all images, content and
+decorative, carry a valid alt="" or descriptive alt, consistent with the prior
+Image Integration phase's own alt-text work). Nav links and the call CTA all
+meet the 44px minimum touch-target height (verified via the site's own CSS:
+`.navrow nav a{min-height:44px}`, `.mast .call{min-height:44px}`, `.bar
+a{min-height:44px}` — present and applied). Heading hierarchy was not
+exhaustively checked past H1 presence in this pass (would require a full
+H1->H2->H3 nesting audit per page; not flagged as a known risk pattern in the
+governing prompt, so treated as lower priority given the broader scope
+already covered).
+
+Frontend performance/stability: 0 console errors or uncaught exceptions across
+all 34 pages. 0 broken or duplicate script/style references (same inline-CSS
+pattern used consistently site-wide, no shared external stylesheet to go
+stale). Images carry explicit width/height attributes and `loading`/`decoding`
+attributes (set during the prior Image Integration phase) — no layout-shift
+risk identified from missing image dimensions.
+
+================================================================================
+8. ISSUES FOUND, TRIAGED, AND THEIR STATUS
+================================================================================
+See responsive-issue-manifest.csv for the full structured table. Summary:
+  - 1 confirmed, fixed issue: site-wide mailto-link horizontal overflow at
+    narrow widths (Section 4, 9).
+  - 5 known-failure-pattern checks (A-E) explicitly tested: 4 came back clean
+    (A, B, C — not present on this design; E — false positive dismissed after
+    isolated re-verification), 1 is not applicable to this site's design (D —
+    no hamburger menu exists here).
+  - 2 interaction components tested and passing (homepage accordion, homepage
+    slider widget).
+  - 1 informational finding not treated as an in-scope defect: /about/ and
+    /privacy/ have no inbound internal links (Section 7, Section 10).
+
+================================================================================
+9. FIX APPLIED (ROOT CAUSE)
+================================================================================
+Added one scoped CSS rule to all 34 pages' existing inline <style> blocks:
+  a[href^="mailto:"]{overflow-wrap:break-word;word-break:break-word}
+This targets only mailto links (the actual source of the long unbreakable
+string) and does not touch any other link, button, or CTA styling anywhere on
+the site — chosen deliberately over a broader `a{...}` rule to avoid any risk
+of unintended visual change to nav links or CTA buttons elsewhere. Applied
+identically across all 34 pages since the footer (and its mailto link) is a
+literally-duplicated shared component, not a single template file.
+
+================================================================================
+10. REMAINING ISSUES / LIMITATIONS / RECOMMENDATIONS
+================================================================================
+  - /about/ and /privacy/ have no inbound internal links anywhere on the live
+    site (Section 7). Recommended fix, not applied in this pass: add a small
+    link to each in the footer's existing ".legal" line (low-risk, minimal
+    visual footprint, consistent with how Privacy links are commonly placed).
+    Left as a recommendation rather than an applied fix since it changes site
+    navigation structure, which is a content/architecture decision outside
+    this prompt's "fix only confirmed visual/responsive/interaction defects"
+    scope.
+  - Heading hierarchy below H1 (H2->H3 nesting correctness) was not
+    exhaustively audited page-by-page; not a pattern flagged as a known risk
+    in the governing instructions, and no evidence of a problem surfaced
+    incidentally during this pass.
+  - Firefox and WebKit/Safari engines were NOT tested — only Chromium was
+    available in this environment. Stated plainly rather than implied as
+    covered; the governing prompt's own ground rules require this disclosure
+    ("Chromium is required when available; test Firefox and WebKit/Safari when
+    supported. State clearly if browser engines/device simulators were
+    unavailable.").
+  - Physical device testing was NOT performed — all mobile/tablet results are
+    Chromium viewport emulation, which is not the same as a physical iPhone or
+    Android device, per Ground Rule in the governing prompt. Disclosed rather
+    than implied as device-tested.
+
+================================================================================
+DELIVERABLES
+================================================================================
+  - sandy-ut-plumbing-site.zip — repaired, deployable (same root structure as
+    before: index.html + pages/ + assets/ + reports/CSVs; mailto overflow-wrap
+    fix applied to all 34 pages)
+  - RESPONSIVE-VISUAL-QA-REPORT.txt — this file
+  - responsive-issue-manifest.csv — structured issue table (10 rows: 1 fixed
+    defect, 5 pattern-check results, 2 interaction-test results, 1 link-
+    integrity result, 1 informational finding)
+  - Before/after screenshots for the one confirmed, fixed defect
+    (shot_before_email_overflow.png / shot_after_email_overflow.png), plus
+    supporting screenshots for the pattern checks (shot_header_768.png,
+    shot_header_1024.png, shot_footer_320.png)

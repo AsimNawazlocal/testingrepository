@@ -1,0 +1,30 @@
+SANDY UT PLUMBING — FINAL AVAILABLE QA REPORT
+Date: 2026-10-13
+Baseline: sandy-ut-plumbing-followup-qa.zip
+
+STATUS: NOT CLEARED FOR PUBLICATION
+
+VERIFIED STATIC CHECKS
+- HTML files: 35 (including duplicate 404 entry)
+- Local href/src resolution against archive files and _redirects: PASS, 0 missing targets.
+- Inline executable JavaScript syntax: PASS, 0 syntax errors (JSON-LD excluded from JS parse).
+- ZIP contents: preserved from latest repaired baseline.
+- Service/location page word-count inspection: no observed pages below 1,000 words among targeted service/location pages; count includes all text within main and may include repeated CTA copy, so this is not a certified meaningful-content count.
+
+IMPORTANT BLOCKER
+- Placeholder-style telephone numbers containing 555 are widespread in page markup and schema (315 pattern matches across HTML). Business owner must provide approved live telephone and routing information; replace consistently and retest all tel links and JSON-LD before publishing.
+
+BROWSER QA
+- Chromium local-file screenshot attempt timed out and did not produce a screenshot.
+- Mobile menu click/touch, dropdown selection, outside click, Escape regression, breakpoint resizing, real visual clipping, image naturalWidth, console/network runtime, and full-page screenshots: NOT VERIFIED in this pass.
+- Prior QA claims are not a substitute for this verification.
+
+CHANGES THIS PASS
+- No website code changes; no speculative fixes.
+- Added this report only.
+
+NEXT REQUIRED ACTIONS
+1. Provide approved business phone number and confirm routing.
+2. Host this ZIP on a browser-accessible staging deployment and provide its URL.
+3. Run full Chromium visual and interaction matrix on staging; fix only reproduced defects.
+4. Retest all 35 routes and relevant responsive templates before launch approval.

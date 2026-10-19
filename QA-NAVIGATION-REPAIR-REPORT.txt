@@ -1,0 +1,9 @@
+SANDY UT PLUMBING — NAVIGATION REPAIR REPORT
+Baseline: sandy-ut-plumbing-qa-reviewed.zip
+Scope: Shared mobile menu script across 35 HTML pages.
+Confirmed baseline defect: At 390px, Chromium page.set_content interaction opened the mobile menu; Escape did not close it (aria-expanded remained true).
+Repair: Added closeMobileMenu() and handlers for Escape, outside click, selecting a nav link, and resizing to desktop width. Existing visual design, content, URLs, and metadata preserved.
+Post-fix verified: In Chromium at 390px using page.set_content, menu opened and Escape closed it (aria-expanded false). This is a DOM interaction verification, not a full served-page visual test.
+Not fully verified: Outside-click, link-selection, and resize behaviors; full visual rendering with external assets, live route resolution, and real mobile touch. An expanded regression test timed out. These checks remain outstanding.
+Local HTTP navigation is blocked by the execution environment; do not treat this as deployment certification.
+Deployment: NOT performed.
